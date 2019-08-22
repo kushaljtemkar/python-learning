@@ -1,0 +1,15 @@
+<h1>Welcome to Blog Practice</h1>
+
+<h2>Posts are below</h2>
+
+{% for post in posts.all %}
+<a href="{% url 'post_details' post.id %}">{{post.title}}</a>
+<br>
+{{post.custom_date}}
+<br>
+<img src="{{ post.image.url }}">
+<br>
+{{post.body}}
+<br>
+<br>
+{% endfor %}

@@ -1,0 +1,14 @@
+<h1>Welcome to the Home page</h1>
+{% load static %}
+<img src="{% static "posts/1.jpg" %}" class="center">
+<hr>
+<br>
+{% for post in posts.all %}
+<a href="{% url 'post_details' post.id %}">{{post.title}}</a>
+<br>
+{{post.custom_date}}
+<br>
+<img src="{{ post.image.url }}">
+<br>
+{{post.body}}
+{% endfor %}
